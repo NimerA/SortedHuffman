@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nimer/CLionProjects/SortedHuffman/BinaryNode.cpp
+BinaryNode.h
+/Users/nimer/CLionProjects/SortedHuffman/BinaryNode.h
+
+/Users/nimer/CLionProjects/SortedHuffman/BinaryNode.h
+iostream
+-
+
+/Users/nimer/CLionProjects/SortedHuffman/Test.cpp
+Test.h
+/Users/nimer/CLionProjects/SortedHuffman/Test.h
+
+/Users/nimer/CLionProjects/SortedHuffman/Test.h
+iostream
+-
+vector
+-
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+map
+-
+queue
+-
+list
+-
+
+/Users/nimer/CLionProjects/SortedHuffman/main.cpp
+Test.h
+/Users/nimer/CLionProjects/SortedHuffman/Test.h
+BinaryNode.h
+/Users/nimer/CLionProjects/SortedHuffman/BinaryNode.h
+iostream
+-
+
