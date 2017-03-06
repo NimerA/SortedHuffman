@@ -10,8 +10,9 @@ public:
     BinaryNode* left;
     BinaryNode* right;
     char value;
+    int frequency;
 
-    BinaryNode(char value);
+    BinaryNode(char value, int frequency);
 };
 
 #endif // BINARYNODE_H
