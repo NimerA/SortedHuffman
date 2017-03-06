@@ -1,3 +1,4 @@
+
 #include "Test.h"
 #include "BinaryNode.h"
 #include <iostream>
@@ -7,21 +8,9 @@ using namespace std;
 
 map<char,string> mapa_global;
 
-
-void print(BinaryNode* node)
-{
-    if(node == NULL)
-        return;
-    cout<<"V:"<<node->value<<" F:"<<node->frequency<<" LF:"<<node->left->frequency<<" RF:"<<node->right->frequency<<endl;
-    print(node->left);
-    print(node->right);
-}
-
-
-
 void recorrerArbol(BinaryNode* actual,string codigo)
 {
-    if(actual->value!=NULL)
+    if(actual->value != '$')
     {
         mapa_global[actual->value] = codigo;
     }else
@@ -37,45 +26,9 @@ map<char,string> getHuffmanCodes(BinaryNode* huffman_tree)
 
     recorrerArbol(huffman_tree,"");
 
-    cout<<endl;
-
-    for (std::map<char,string>::iterator it=mapa_global.begin(); it!=mapa_global.end(); ++it)
-        std::cout << it->first << " => " << it->second << '\n';
-
-    cout<<endl;
+    for (std::map<char,string>::iterator it=mapa_global.begin(); it!=mapa_global.end(); ++it)     std::cout << it->first << " => " << it->second << '\n';
     return mapa_global;
 }
-
-BinaryNode* findMin(queue<BinaryNode*> *q1,queue<BinaryNode*> *q2)
-{
-    BinaryNode* temp;
-    // Step 3.a: If second queue is empty, dequeue from first queue
-    if (q1->empty()) {
-        temp = q2->front();
-        q2->pop();
-        return temp;
-    }
-
-    // Step 3.b: If first queue is empty, dequeue from second queue
-    if (q2->empty()) {
-        temp = q1->front();
-        q1->pop();
-        return temp;
-    }
-
-    // Step 3.c:  Else, compare the front of two queues and dequeue minimum
-    if (q1->front()->frequency  < q2->front()->frequency ) {
-        temp = q1->front();
-        q1->pop();
-        return temp;
-    }
-
-    temp = q2->front();
-    q2->pop();
-    return temp;
-}
-
-
 
 map<char,string> getHuffman(vector<char> characters, vector<int> frequencies)
 {
@@ -98,7 +51,7 @@ map<char,string> getHuffman(vector<char> characters, vector<int> frequencies)
         } else if (q2.empty()) {
             n1 = q1.front();
             q1.pop();
-        } else if ((q1.front()->frequency  < q2.front()->frequency) && (q1.front()->value != '$' && q2.front()->value == '$') ) {
+        } else if (q1.front()->frequency  < q2.front()->frequency) {
             n1 = q1.front();
             q1.pop();
         } else {
@@ -113,7 +66,7 @@ map<char,string> getHuffman(vector<char> characters, vector<int> frequencies)
         } else if (q2.empty()) {
             n2 = q1.front();
             q1.pop();
-        } else if ((q1.front()->frequency  < q2.front()->frequency) && (q1.front()->value != '$' && q2.front()->value == '$' )) {
+        } else if (q1.front()->frequency  < q2.front()->frequency) {
             n2 = q1.front();
             q1.pop();
         } else {
@@ -138,7 +91,20 @@ map<char,string> getHuffman(vector<char> characters, vector<int> frequencies)
 
 int main ()
 {
-
+    /*
+    for(int i=0;i<5;i++)
+        cout<<"a";
+    for(int i=0;i<10;i++)
+        cout<<"b";
+    for(int i=0;i<19;i++)
+        cout<<"e";
+    for(int i=0;i<13;i++)
+        cout<<"d";
+    for(int i=0;i<12;i++)
+        cout<<"c";
+    for(int i=0;i<91;i++)
+        cout<<"f";
+    */
     test();
     return 0;
 }

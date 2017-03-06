@@ -3,7 +3,7 @@
 
 void test()
 {
-    /*
+
     static const char arrx[] = {'x', 'y', 'z'};
     vector<char> vecx (arrx, arrx + sizeof(arrx) / sizeof(arrx[0]) );
 
@@ -11,7 +11,7 @@ void test()
     vector<int> vec2x (arr2x, arr2x + sizeof(arr2x) / sizeof(arr2x[0]) );
 
     map<char,string> resx = getHuffman(vecx, vec2x);
-    */
+
     static const char arr[] = {'a', 'b', 'c', 'd', 'e', 'f'};
     vector<char> vec (arr, arr + sizeof(arr) / sizeof(arr[0]) );
 
@@ -20,18 +20,16 @@ void test()
 
     map<char,string> res = getHuffman(vec, vec2);
 
-    if(res['f'] == "0"
-       && res['c'] == "100"
-       && res['d'] == "101"
-       && res['a'] == "1100"
-       && res['b'] == "1101"
-       && res['e'] == "111"
-    /*
-       && resx['x'] == "10"
-       && resx['y'] == "11"
-       && resx['z'] == "0"
-       */
-            )
+    if(res['f'] == "1"
+       && res['c'] == "000"
+       && res['d'] == "001"
+       && res['a'] == "0100"
+       && res['b'] == "0101"
+       && res['e'] == "011"
+
+       && resx['x'] == "00"
+       && resx['y'] == "01"
+       && resx['z'] == "1")
     {
         cout<<"Test: Pass"<<endl;
     }else
